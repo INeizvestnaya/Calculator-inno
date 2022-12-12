@@ -1,0 +1,180 @@
+/* Common */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Calculator */
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 110px auto;
+}
+
+.calculator {
+  grid-column: 1 / 3;
+  display: grid;
+}
+
+@media (orientation: portrait) {
+  .calculator {
+    grid-template-columns: auto;
+    grid-template-rows: 4fr 5fr;
+  }
+
+  .calculator-engineer {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .undo-button {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (orientation: landscape) {
+  .calculator {
+    grid-template-columns: 3fr 4fr;
+    grid-template-rows: auto;
+  }
+
+  .calculator-engineer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
+
+.calculator-main,
+.calculator-engineer {
+  display: grid;
+}
+
+.calculator-main {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.zero-button {
+  grid-column: 1 / 3;
+}
+
+button {
+  font-size: 30px;
+  border-radius: 0;
+}
+
+.sqrt {
+  font-size: 15px;
+  position: relative;
+  top: -10px;
+  left: 10px;
+}
+
+#memory {
+  position: absolute;
+  font-size: 30px;
+  top: 70px;
+  left: 15px;
+}
+
+#calculator-input {
+  font-size: 70px;
+  padding: 10px 30px;
+  text-align: end;
+  overflow-x: auto;
+  display: grid;
+  grid-template-rows: auto min-content;
+  align-items: end;
+}
+
+#calculator-input #prev {
+  font-size: 20px;
+}
+
+#calculator-input #cur {
+  height: 76px;
+}
+
+#change-theme {
+  align-self: flex-start;
+  margin: 10px;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+/* Colors */
+
+/* usual buttons */
+
+.dark-button {
+  color: white;
+  background-color: #5a5b5c;
+  border: 2px solid #48494a;
+}
+
+.dark-button:hover {
+  background-color: #757677;
+}
+
+.light-button {
+  color: black;
+  background-color: #e3e3e3;
+  border: 2px solid white;
+}
+
+.light-button:hover {
+  background-color: #cacaca;
+}
+
+/* orange buttons */
+
+.orange-button-dark {
+  background-color: #f1a23c;
+}
+
+.orange-button-dark:hover {
+  background-color: #f1b363;
+}
+
+.orange-button-light {
+  background-color: #f1b363;
+}
+
+.orange-button-light:hover {
+  background-color: #f1a23c;
+}
+
+/* number buttons */
+
+.number-button-dark {
+  background-color: #757677;
+}
+
+.number-button-dark:hover {
+  background-color: #888;
+}
+
+.number-button-light {
+  background-color: #cacaca;
+}
+
+.number-button-light:hover {
+  background-color: #b2b2b2;
+}
+
+/* change theme button */
+
+#change-theme.dark {
+  border: 2px solid #757677;
+}
+
+#change-theme.light {
+  border: 2px solid #cacaca;
+}
